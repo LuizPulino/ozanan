@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/_css/main.css">
+    <script src="/_js/storage.js"></script>
+    <title>Storage</title>
+</head>
+<body>
+    <h1>Storage</h1>
+    <div id="log"></div>
+    <script>
+        let persons = [
+            ['nome', 'idade', 'relação'],
+            ['', '', ''],
+            ['Maria', 35, 'mãe'],
+            ['José', 36, 'pai'],
+            ['Jesus', 14, 'filho'],
+            ['Pedro', 15, 'filho'],
+        ];
+        Storage.create("persons", JSON.stringify(persons));
+        console.log(Storage.read("persons"));
+    </script>
+</body>
+</html>

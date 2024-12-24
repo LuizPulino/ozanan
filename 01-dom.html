@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <div id="log"></div>
+    <p class="red">text</p>
+    <p>text</p>
+    <p>text</p>
+    <label for="text">text</label>
+    <input type="text" id="text1">
+    <input type="text" id="text2">
+    <script type="module">
+        import $ from '/js/modules/dom.js';
+        $("p").html("-main text-");
+        $("p").append("append");
+        $("p").prepend("prepend");
+        $("p").on("click", function() {
+            $(this).toggleClass("red");
+        });
+        $("#text1").value("text value");
+        $("#text1").on("change", function() {
+            $("p").html($(this).value());
+        });
+        $("#text2").on("change", function() {
+            $("p").hide();
+        });
+    </script>
+</body>
+</html>
